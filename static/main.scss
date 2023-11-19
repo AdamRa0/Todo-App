@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+// Primary colours
+$bright-blue: hsl(220, 98%, 61%);
+$check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// Neutral Colours
+
+// Light Theme
+$very-light-grey: hsl(0, 0%, 98%);
+$very-light-greyish-blue: hsl(236, 33%, 92%);
+$light-greyish-blue: hsl(233, 11%, 84%);
+$dark-greyish-blue: hsl(236, 9%, 61%);
+$very-dark-greyish-blue: hsl(235, 19%, 35%);
+
+// Dark Theme
+$very-dark-blue: hsl(235, 21%, 11%);
+$very-dark-desaturated-blue: hsl(235, 24%, 19%);
+$light-greyish-blue: hsl(234, 39%, 85%);
+$light-greyish-blue-hover: hsl(236, 33%, 92%);
+$dark-greyish-blue: hsl(234, 11%, 52%);
+$very-dark-greyish-blue: hsl(233, 14%, 35%);
+$very-dark-greyish-blue-2: hsl(237, 14%, 26%);
+
+$font-weight-regular: 400;
+$font-weight-large: 700;
+
+* {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.note-icon {
+  border-radius: 50%;
+  border: 1px solid $light-greyish-blue;
+}
+
+.body {
+  display: grid;
+  grid-template-rows: 250px auto;
+  font-size: 18px;
+
+  .bg-img {
+    background-size: cover;
+    &.light {
+      background-image: url("../static/images/bg-desktop-light.jpg");
+    }
+
+    &.dark {
+      background-image: url("../static/images/bg-desktop-dark.jpg");
+    }
+  }
+
+  .todo-content {
+    position: absolute;
+    z-index: 999;
+    margin: 100px 30%;
+    width: 500px;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        font-weight: $font-weight-large;
+        text-transform: uppercase;
+        color: $very-light-grey;
+        letter-spacing: 10px;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    .new-entry-container {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0;
+      height: 50px;
+      position: relative;
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        text-align: center;
+      }
+
+      span {
+        position: absolute;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        top: 15px;
+        left: 20px;
+
+        p {
+          color: $dark-greyish-blue;
+        }
+        
+        .note-icon {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
