@@ -86,6 +86,23 @@
   margin-top: 30px;
   border-radius: 4px;
   box-shadow: hsl(234, 11%, 52%) 8px 12px 50px;
+  display: grid;
+  grid-template-rows: 85% 15%;
+}
+.body .todo-content .entries__list {
+  list-style: none;
+}
+.body .todo-content .entries__info {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.body .todo-content .entries__info__categories {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
 }
 .body .empty-space {
   background-color: hsl(236, 33%, 92%);
