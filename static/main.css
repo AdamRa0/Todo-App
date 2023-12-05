@@ -14,6 +14,7 @@
   display: grid;
   grid-template-rows: 250px auto;
   font-size: 18px;
+  overflow-y: hidden;
 }
 .body .bg-img {
   background-size: cover;
@@ -77,4 +78,24 @@
 .body .todo-content .new-entry-container .placeholder-text .note-icon {
   height: 20px;
   width: 20px;
+}
+.body .todo-content .entries {
+  height: 300px;
+  width: 100%;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 4px;
+  box-shadow: hsl(234, 11%, 52%) 8px 12px 50px;
+}
+.body .empty-space {
+  background-color: hsl(236, 33%, 92%);
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.body .empty-space__text {
+  margin-bottom: 40px;
+  color: hsl(234, 11%, 52%);
 }/*# sourceMappingURL=main.css.map */
