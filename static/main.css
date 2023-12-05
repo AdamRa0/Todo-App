@@ -60,7 +60,10 @@
   outline: none;
   text-align: center;
 }
-.body .todo-content .new-entry-container span {
+.body .todo-content .new-entry-container input:focus ~ .placeholder-text p {
+  display: none;
+}
+.body .todo-content .new-entry-container .placeholder-text {
   position: absolute;
   display: flex;
   gap: 20px;
@@ -68,10 +71,10 @@
   top: 15px;
   left: 20px;
 }
-.body .todo-content .new-entry-container span p {
+.body .todo-content .new-entry-container .placeholder-text p {
   color: hsl(234, 11%, 52%);
 }
-.body .todo-content .new-entry-container span .note-icon {
+.body .todo-content .new-entry-container .placeholder-text .note-icon {
   height: 20px;
   width: 20px;
 }/*# sourceMappingURL=main.css.map */

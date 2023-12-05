@@ -91,9 +91,15 @@ $font-weight-large: 700;
         border-radius: 4px;
         outline: none;
         text-align: center;
+
+        &:focus {
+          ~ .placeholder-text p {
+            display: none;
+          }
+        }
       }
 
-      span {
+      .placeholder-text {
         position: absolute;
         display: flex;
         gap: 20px;
@@ -104,7 +110,7 @@ $font-weight-large: 700;
         p {
           color: $dark-greyish-blue;
         }
-        
+
         .note-icon {
           height: 20px;
           width: 20px;
