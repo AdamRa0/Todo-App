@@ -1,4 +1,21 @@
 <?php include 'inc/header.php' ?>
+
+<?php
+$example_items = array(
+  "Jog around the park 3x",
+  "Read a book",
+  "Meditate for 10 minutes",
+  "Pick up groceries",
+  "Complete todo app",
+  "Complete online javascript course",
+  "Read more on kubernetes",
+  "Continue working on hobbie operating system",
+  "Continue reading on x86 assembly",
+  "Return crime and punishment to the library"
+)
+?>
+
+
 <div class="bg-img light">
 
 </div>
@@ -18,36 +35,16 @@
   </div>
   <div class="entries">
     <ul class="entries__list">
-      <li>
-        <div>
-          <img src="" alt="">
-          <p></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img src="" alt="">
-          <p></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img src="" alt="">
-          <p></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img src="" alt="">
-          <p></p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img src="" alt="">
-          <p></p>
-        </div>
-      </li>
+      <?php
+      foreach ($example_items as $item) {
+        echo "
+          <li class='entries__list__item'>
+          <div class='note-icon'></div>
+          <p>$item</p>
+          <li>
+        ";
+      }
+      ?>
     </ul>
     <div class="entries__info">
       <p>5 items left</p>
