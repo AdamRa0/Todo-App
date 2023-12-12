@@ -29,7 +29,7 @@ $example_items = array(
   <div class="new-entry-container">
     <input class="new-entry-container__text" type="text">
     <span class="placeholder-text">
-      <div class="note-icon"></div>
+      <div class="note-icon" tabindex="0"></div>
       <p>Create a new todo...</p>
     </span>
   </div>
@@ -39,7 +39,7 @@ $example_items = array(
       foreach ($example_items as $item) {
         echo "
           <li class='entries__list__item'>
-          <div class='note-icon'></div>
+          <div class='note-icon' tabindex=0></div>
           <p>$item</p>
           <li>
         ";
@@ -54,6 +54,12 @@ $example_items = array(
         <p>Completed</p>
       </div>
       <p>Clear Completed</p>
+    </div>
+
+    <div class="entries__info__categories__mobile">
+      <p>All</p>
+      <p>Active</p>
+      <p>Completed</p>
     </div>
   </div>
 </div>

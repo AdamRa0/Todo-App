@@ -1,31 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-
-// Primary colours
-$bright-blue: hsl(220, 98%, 61%);
-$check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-
-// Neutral Colours
-
-// Light Theme
-$very-light-grey: hsl(0, 0%, 98%);
-$very-light-greyish-blue: hsl(236, 33%, 92%);
-$light-greyish-blue: hsl(233, 11%, 84%);
-$dark-greyish-blue: hsl(236, 9%, 61%);
-$very-dark-greyish-blue: hsl(235, 19%, 35%);
-
-// Dark Theme
-$very-dark-blue: hsl(235, 21%, 11%);
-$very-dark-desaturated-blue: hsl(235, 24%, 19%);
-$light-greyish-blue: hsl(234, 39%, 85%);
-$light-greyish-blue-hover: hsl(236, 33%, 92%);
-$dark-greyish-blue: hsl(234, 11%, 52%);
-$very-dark-greyish-blue: hsl(233, 14%, 35%);
-$very-dark-greyish-blue-2: hsl(237, 14%, 26%);
-
-$font-weight-regular: 400;
-$font-weight-large: 700;
-
-$border-radius: 4px;
+@import "./colours.scss";
+@import "./variables.scss";
+@import "./mobile_media_query_mixin.scss";
 
 * {
   padding: 0;
@@ -37,6 +13,13 @@ $border-radius: 4px;
 .note-icon {
   border-radius: 50%;
   border: 1px solid $light-greyish-blue;
+  height: 20px;
+  width: 20px;
+
+  @include mobile-media-query {
+    height: 10px;
+    width: 10px;
+  }
 }
 
 .body {
@@ -47,6 +30,7 @@ $border-radius: 4px;
 
   .bg-img {
     background-size: cover;
+
     &.light {
       background-image: url("../static/images/bg-desktop-light.jpg");
     }
@@ -61,6 +45,11 @@ $border-radius: 4px;
     z-index: 999;
     margin: 100px 30%;
     width: 500px;
+
+    @include mobile-media-query {
+      margin: 25% 16%;
+      width: 70%;
+    }
 
     .header {
       display: flex;
@@ -97,6 +86,7 @@ $border-radius: 4px;
 
         &.dark {
           background-color: $very-dark-greyish-blue;
+          color: $light-greyish-blue;
         }
 
         &:focus {
@@ -116,11 +106,10 @@ $border-radius: 4px;
 
         p {
           color: $dark-greyish-blue;
-        }
 
-        .note-icon {
-          height: 20px;
-          width: 20px;
+          @include mobile-media-query {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -155,14 +144,13 @@ $border-radius: 4px;
           border-bottom: 1px solid $light-greyish-blue;
           color: $very-dark-greyish-blue;
 
+          @include mobile-media-query {
+            font-size: 12px;
+          }
+
           &.dark {
             color: $light-greyish-blue;
             border-bottom: 1px solid $dark-greyish-blue;
-          }
-
-          .note-icon {
-            height: 20px;
-            width: 20px;
           }
         }
       }
@@ -174,11 +162,43 @@ $border-radius: 4px;
         justify-content: space-around;
         color: $dark-greyish-blue;
 
+        @include mobile-media-query {
+          font-size: 12px;
+        }
+
         &__categories {
           display: flex;
           justify-content: space-evenly;
           align-items: center;
           gap: 10px;
+
+          @include mobile-media-query {
+            display: none;
+          }
+
+          &__mobile {
+            display: none;
+            color: $dark-greyish-blue;
+
+            @include mobile-media-query {
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+              gap: 10px;
+              font-size: 12px;
+
+              background-color: white;
+              margin-top: 10px;
+              padding: 20px;
+              border-radius: $border-radius;
+              box-shadow: $dark-greyish-blue 8px 12px 50px;
+
+              &.dark {
+                background-color: $very-dark-greyish-blue;
+                box-shadow: $very-dark-blue 8px 12px 50px;
+              }
+            }
+          }
         }
       }
     }
@@ -186,7 +206,7 @@ $border-radius: 4px;
 
   .empty-space {
     background-color: $very-light-greyish-blue;
-    height: 60vh;
+    height: calc(100vh - 250px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -199,6 +219,10 @@ $border-radius: 4px;
     &__text {
       margin-bottom: 40px;
       color: $dark-greyish-blue;
+
+      @include mobile-media-query {
+        font-size: 15px;
+      }
     }
   }
 }
