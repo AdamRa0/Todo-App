@@ -21,13 +21,13 @@ $example_items = array(
 </div>
 <div class="todo-content">
   <div class="header">
-    <h1>Todo</h1>
-    <button type="button">
-      <img src="./static/images/icon-moon.svg" alt="Moon Icon">
+    <h1 class="header__title">Todo</h1>
+    <button type="button" class="header__button">
+      <img class="header__button__icon" src="./static/images/icon-moon.svg">
     </button>
   </div>
   <div class="new-entry-container">
-    <input type="text">
+    <input class="new-entry-container__text" type="text">
     <span class="placeholder-text">
       <div class="note-icon"></div>
       <p>Create a new todo...</p>

@@ -36,13 +36,13 @@
   justify-content: space-between;
   align-items: center;
 }
-.body .todo-content .header h1 {
+.body .todo-content .header__title {
   font-weight: 700;
   text-transform: uppercase;
   color: hsl(0, 0%, 98%);
   letter-spacing: 10px;
 }
-.body .todo-content .header button {
+.body .todo-content .header__button {
   background-color: transparent;
   border: none;
 }
@@ -53,7 +53,7 @@
   height: 50px;
   position: relative;
 }
-.body .todo-content .new-entry-container input {
+.body .todo-content .new-entry-container__text {
   width: 100%;
   height: 100%;
   border: none;
@@ -61,7 +61,10 @@
   outline: none;
   text-align: center;
 }
-.body .todo-content .new-entry-container input:focus ~ .placeholder-text p {
+.body .todo-content .new-entry-container__text.dark {
+  background-color: hsl(233, 14%, 35%);
+}
+.body .todo-content .new-entry-container__text:focus ~ .placeholder-text p {
   display: none;
 }
 .body .todo-content .new-entry-container .placeholder-text {
@@ -89,6 +92,10 @@
   display: grid;
   grid-template-rows: 85% 15%;
 }
+.body .todo-content .entries.dark {
+  background-color: hsl(233, 14%, 35%);
+  box-shadow: hsl(235, 21%, 11%) 8px 12px 50px;
+}
 .body .todo-content .entries__list {
   list-style: none;
   overflow-y: scroll;
@@ -101,6 +108,10 @@
   padding: 10px;
   border-bottom: 1px solid hsl(234, 39%, 85%);
   color: hsl(233, 14%, 35%);
+}
+.body .todo-content .entries__list__item.dark {
+  color: hsl(234, 39%, 85%);
+  border-bottom: 1px solid hsl(234, 11%, 52%);
 }
 .body .todo-content .entries__list__item .note-icon {
   height: 20px;
@@ -126,6 +137,9 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+}
+.body .empty-space.dark {
+  background-color: hsl(237, 14%, 26%);
 }
 .body .empty-space__text {
   margin-bottom: 40px;
