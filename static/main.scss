@@ -15,6 +15,7 @@
   border: 1px solid $light-greyish-blue;
   height: 20px;
   width: 20px;
+  transition: border-image 0.2s ease;
 
   @include mobile-media-query {
     height: 10px;
@@ -27,6 +28,15 @@
   grid-template-rows: 250px auto;
   font-size: 18px;
   overflow-y: hidden;
+
+  button {
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   .bg-img {
     background-size: cover;
@@ -126,9 +136,35 @@
       display: grid;
       grid-template-rows: 85% 15%;
 
+      button {
+        color: $dark-greyish-blue;
+
+        &:hover {
+          color: $very-dark-blue;
+        }
+
+        &:active,
+        &:focus {
+          color: $bright-blue;
+        }
+      }
+
       &.dark {
         background-color: $very-dark-greyish-blue;
         box-shadow: $very-dark-blue 8px 12px 50px;
+
+        button {
+          color: $light-greyish-blue;
+  
+          &:hover {
+            color: $light-greyish-blue-hover;
+          }
+  
+          &:active,
+          &:focus {
+            color: $bright-blue;
+          }
+        }
       }
 
       &__list {
@@ -140,17 +176,34 @@
           align-items: center;
           gap: 15px;
           height: 40px;
-          padding: 10px;
+          padding: 10px 10px 10px 20px;
           border-bottom: 1px solid $light-greyish-blue;
           color: $very-dark-greyish-blue;
+
+          &:hover {
+            color: $very-dark-blue;
+            cursor: pointer;
+          }
 
           @include mobile-media-query {
             font-size: 12px;
           }
 
+          & .note-icon {
+            &:hover {
+              cursor: pointer;
+              border-image: $check-background;
+              border-image-slice: 1;
+            }
+          }
+
           &.dark {
             color: $light-greyish-blue;
             border-bottom: 1px solid $dark-greyish-blue;
+
+            &:hover {
+              color: $light-greyish-blue-hover;
+            }
           }
         }
       }

@@ -10,6 +10,8 @@
   border: 1px solid hsl(234, 39%, 85%);
   height: 20px;
   width: 20px;
+  transition: border-image 0.2s ease;
+  transition: border-image 0.2s ease, -o-border-image 0.2s ease;
 }
 @media (max-width: 500px) {
   .note-icon {
@@ -23,6 +25,13 @@
   grid-template-rows: 250px auto;
   font-size: 18px;
   overflow-y: hidden;
+}
+.body button {
+  background-color: transparent;
+  border: none;
+}
+.body button:hover {
+  cursor: pointer;
 }
 .body .bg-img {
   background-size: cover;
@@ -108,9 +117,27 @@
   display: grid;
   grid-template-rows: 85% 15%;
 }
+.body .todo-content .entries button {
+  color: hsl(234, 11%, 52%);
+}
+.body .todo-content .entries button:hover {
+  color: hsl(235, 21%, 11%);
+}
+.body .todo-content .entries button:active, .body .todo-content .entries button:focus {
+  color: hsl(220, 98%, 61%);
+}
 .body .todo-content .entries.dark {
   background-color: hsl(233, 14%, 35%);
   box-shadow: hsl(235, 21%, 11%) 8px 12px 50px;
+}
+.body .todo-content .entries.dark button {
+  color: hsl(234, 39%, 85%);
+}
+.body .todo-content .entries.dark button:hover {
+  color: hsl(236, 33%, 92%);
+}
+.body .todo-content .entries.dark button:active, .body .todo-content .entries.dark button:focus {
+  color: hsl(220, 98%, 61%);
 }
 .body .todo-content .entries__list {
   list-style: none;
@@ -121,18 +148,31 @@
   align-items: center;
   gap: 15px;
   height: 40px;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   border-bottom: 1px solid hsl(234, 39%, 85%);
   color: hsl(233, 14%, 35%);
+}
+.body .todo-content .entries__list__item:hover {
+  color: hsl(235, 21%, 11%);
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .body .todo-content .entries__list__item {
     font-size: 12px;
   }
 }
+.body .todo-content .entries__list__item .note-icon:hover {
+  cursor: pointer;
+  -o-border-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+     border-image: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-image-slice: 1;
+}
 .body .todo-content .entries__list__item.dark {
   color: hsl(234, 39%, 85%);
   border-bottom: 1px solid hsl(234, 11%, 52%);
+}
+.body .todo-content .entries__list__item.dark:hover {
+  color: hsl(236, 33%, 92%);
 }
 .body .todo-content .entries__info {
   font-size: 14px;

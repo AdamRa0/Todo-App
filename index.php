@@ -49,17 +49,17 @@ $example_items = array(
     <div class="entries__info">
       <p>5 items left</p>
       <div class="entries__info__categories">
-        <p>All</p>
-        <p>Active</p>
-        <p>Completed</p>
+        <button>All</button>
+        <button>Active</button>
+        <button>Completed</button>
       </div>
-      <p>Clear Completed</p>
+      <button>Clear Completed</button>
     </div>
 
     <div class="entries__info__categories__mobile">
-      <p>All</p>
-      <p>Active</p>
-      <p>Completed</p>
+      <button>All</button>
+      <button>Active</button>
+      <button>Completed</button>
     </div>
   </div>
 </div>
