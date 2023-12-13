@@ -174,11 +174,18 @@
         &__item {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           gap: 15px;
           height: 40px;
           padding: 10px 10px 10px 20px;
           border-bottom: 1px solid $light-greyish-blue;
           color: $very-dark-greyish-blue;
+
+          &__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          }
 
           &:hover {
             color: $very-dark-blue;

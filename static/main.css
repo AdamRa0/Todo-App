@@ -146,11 +146,17 @@
 .body .todo-content .entries__list__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 15px;
   height: 40px;
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid hsl(234, 39%, 85%);
   color: hsl(233, 14%, 35%);
+}
+.body .todo-content .entries__list__item__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .body .todo-content .entries__list__item:hover {
   color: hsl(235, 21%, 11%);

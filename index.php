@@ -39,8 +39,13 @@ $example_items = array(
       foreach ($example_items as $item) {
         echo "
           <li class='entries__list__item'>
-          <div class='note-icon' tabindex=0></div>
-          <p>$item</p>
+          <div class='entries__list__item__wrapper'>
+            <div class='note-icon' tabindex=0></div>
+            <p>$item</p>
+          </div>
+          <button class='entries__list__item__delete'>
+          <img class='entries__list__item__delete__icon'/>
+          </button>
           <li>
         ";
       }

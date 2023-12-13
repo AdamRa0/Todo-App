@@ -6,11 +6,18 @@ const entries = document.querySelector(".entries");
 const entriesInfoCategoriesMobile = document.querySelector(
   ".entries__info__categories__mobile"
 );
+const entryDeleteIcons = document.querySelectorAll(
+  ".entries__list__item__delete__icon"
+);
 const entriesListItem = document.querySelectorAll(".entries__list__item");
 const newEntryContainer = document.querySelector(".new-entry-container__text");
 const siteHeaderImage = document.querySelector(".bg-img");
 
 var isDarkTheme = false;
+
+entryDeleteIcons.forEach((icon) => {
+  icon.src = "static/images/icon-cross.svg";
+});
 
 function changeTheme() {
   changeThemeButtonIcon.src = isDarkTheme
