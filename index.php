@@ -2,11 +2,14 @@
 
 <?php
 $result = $conn->query("SELECT * FROM notes");
-$notes = array();
+$tasks = array();
 
 while ($row = $result->fetch_assoc()) {
-  array_push($notes, $row);
+  array_push($tasks, $row);
 }
+
+$num_of_incomplete_tasks = $conn->query("SELECT COUNT(*) FROM notes WHERE Completed=0")->fetch_column();
+
 ?>
 
 
@@ -30,8 +33,8 @@ while ($row = $result->fetch_assoc()) {
   <div class="entries">
     <ul class="entries__list">
       <?php
-      foreach ($notes as $note) {
-        $content = $note['Content'];
+      foreach ($tasks as $task) {
+        $content = $task['Content'];
 
         echo "
           <li class='entries__list__item'>
@@ -48,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
       ?>
     </ul>
     <div class="entries__info">
-      <p>5 items left</p>
+      <p><?php echo $num_of_incomplete_tasks?> items left</p>
       <div class="entries__info__categories">
         <button>All</button>
         <button>Active</button>
