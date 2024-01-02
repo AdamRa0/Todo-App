@@ -35,6 +35,7 @@ $num_of_incomplete_tasks = $conn->query("SELECT COUNT(*) FROM notes WHERE Comple
       <?php
       foreach ($tasks as $task) {
         $content = $task['Content'];
+        $post_id = $task['ID'];
 
         echo "
           <li class='entries__list__item'>
@@ -42,22 +43,26 @@ $num_of_incomplete_tasks = $conn->query("SELECT COUNT(*) FROM notes WHERE Comple
             <div class='note-icon' tabindex=0></div>
             <p>$content</p>
           </div>
-          <button class='entries__list__item__delete'>
+          <form action='services/delete_post_service.php' method='POST'>
+          <button type='submit' class='entries__list__item__delete' name='$post_id'>
           <img class='entries__list__item__delete__icon'/>
           </button>
+          </form>
           <li>
         ";
       }
       ?>
     </ul>
     <div class="entries__info">
-      <p><?php echo $num_of_incomplete_tasks?> items left</p>
+      <p><?php echo $num_of_incomplete_tasks ?> items left</p>
       <div class="entries__info__categories">
         <button>All</button>
         <button>Active</button>
         <button>Completed</button>
       </div>
-      <button>Clear Completed</button>
+      <form action="services/delete_posts_service.php" method="POST">
+        <button type="submit">Clear Completed</button>
+      </form>
     </div>
 
     <div class="entries__info__categories__mobile">

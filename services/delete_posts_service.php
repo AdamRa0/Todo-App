@@ -2,9 +2,7 @@
 include "../config/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $post_id = array_keys($_POST)[0];
-
-    $query = "DELETE FROM notes WHERE ID=$post_id";
+    $query = "DELETE FROM notes WHERE Completed=1";
 
     $conn->query($query);
 
