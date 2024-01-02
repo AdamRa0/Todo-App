@@ -13,6 +13,10 @@
   transition: border-image 0.2s ease;
   transition: border-image 0.2s ease, -o-border-image 0.2s ease;
 }
+.note-icon.completed {
+  background-size: cover;
+  background-image: url("../static/images/icon-check.svg"), linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
 @media (max-width: 500px) {
   .note-icon {
     height: 10px;
@@ -162,6 +166,9 @@
   display: flex;
   align-items: center;
   gap: 15px;
+}
+.body .todo-content .entries__list__item__wrapper.completed {
+  text-decoration: line-through;
 }
 .body .todo-content .entries__list__item:hover {
   color: hsl(235, 21%, 11%);

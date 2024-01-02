@@ -17,6 +17,11 @@
   width: 20px;
   transition: border-image 0.2s ease;
 
+  &.completed {
+    background-size: cover;
+    background-image: url("../static/images/icon-check.svg"), $check-background;
+  }
+
   @include mobile-media-query {
     height: 10px;
     width: 10px;
@@ -188,6 +193,10 @@
             display: flex;
             align-items: center;
             gap: 15px;
+
+            &.completed {
+              text-decoration: line-through;
+            }
           }
 
           &:hover {

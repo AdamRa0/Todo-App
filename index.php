@@ -33,24 +33,49 @@ $num_of_incomplete_tasks = $conn->query("SELECT COUNT(*) FROM notes WHERE Comple
   <div class="entries">
     <ul class="entries__list">
       <?php
-      foreach ($tasks as $task) {
-        $content = $task['Content'];
-        $post_id = $task['ID'];
 
-        echo "
-          <li class='entries__list__item'>
-          <div class='entries__list__item__wrapper'>
-            <div class='note-icon' tabindex=0></div>
-            <p>$content</p>
-          </div>
-          <form action='services/delete_post_service.php' method='POST'>
-          <button type='submit' class='entries__list__item__delete' name='$post_id'>
-          <img class='entries__list__item__delete__icon'/>
-          </button>
-          </form>
-          <li>
-        ";
+      if (sizeof($tasks) == 0) {
+        echo "<p class='entries_list__empty__message'> No Tasks</p>";
+      } else {
+        foreach ($tasks as $task) {
+          $content = $task['Content'];
+          $post_id = $task['ID'];
+          $completed = $task['Completed'];
+
+          if ($completed == 1) {
+            echo "
+            <li class='entries__list__item'>
+            <div class='entries__list__item__wrapper completed'>
+              <form action='services/update_post_service.php' method='POST' id=$post_id>
+              <input type='submit' value='' name='$post_id' class='note-icon completed'/>
+              </form>
+              <p>$content</p>
+            </div>
+            <form action='services/delete_post_service.php' method='POST'>
+            <button type='submit' class='entries__list__item__delete' name='$post_id'>
+            <img class='entries__list__item__delete__icon'/>
+            </button>
+            </form>
+            <li>";
+          } else {
+            echo "
+            <li class='entries__list__item'>
+            <div class='entries__list__item__wrapper'>
+              <form action='services/update_post_service.php' method='POST' id=$post_id>
+              <input type='submit' value='' name='$post_id' class='note-icon'/>
+              </form>
+              <p>$content</p>
+            </div>
+            <form action='services/delete_post_service.php' method='POST'>
+            <button type='submit' class='entries__list__item__delete' name='$post_id'>
+            <img class='entries__list__item__delete__icon'/>
+            </button>
+            </form>
+            <li>";
+          }
+        }
       }
+
       ?>
     </ul>
     <div class="entries__info">
