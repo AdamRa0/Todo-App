@@ -93,6 +93,7 @@
         border-radius: $border-radius;
         outline: none;
         text-align: center;
+        opacity: 0;
 
         &.dark {
           background-color: $very-dark-greyish-blue;
@@ -100,6 +101,7 @@
         }
 
         &:focus {
+          opacity: 100%;
           ~ .placeholder-text p {
             display: none;
           }
@@ -113,9 +115,10 @@
         align-items: center;
         top: 15px;
         left: 20px;
+        z-index: -1;
 
         p {
-          color: $dark-greyish-blue;
+          color: $light-greyish-blue;
 
           @include mobile-media-query {
             font-size: 12px;
@@ -155,11 +158,11 @@
 
         button {
           color: $light-greyish-blue;
-  
+
           &:hover {
             color: $light-greyish-blue-hover;
           }
-  
+
           &:active,
           &:focus {
             color: $bright-blue;

@@ -1,18 +1,12 @@
 <?php include 'inc/header.php' ?>
 
 <?php
-$example_items = array(
-  "Jog around the park 3x",
-  "Read a book",
-  "Meditate for 10 minutes",
-  "Pick up groceries",
-  "Complete todo app",
-  "Complete online javascript course",
-  "Read more on kubernetes",
-  "Continue working on hobbie operating system",
-  "Continue reading on x86 assembly",
-  "Return crime and punishment to the library"
-)
+$result = $conn->query("SELECT * FROM notes");
+$notes = array();
+
+while ($row = $result->fetch_assoc()) {
+  array_push($notes, $row);
+}
 ?>
 
 
@@ -26,22 +20,24 @@ $example_items = array(
       <img class="header__button__icon" src="./static/images/icon-moon.svg">
     </button>
   </div>
-  <div class="new-entry-container">
-    <input class="new-entry-container__text" type="text">
+  <form action="services/create_post_service.php" method="POST" class="new-entry-container">
+    <input class="new-entry-container__text" type="text" name="new_note">
     <span class="placeholder-text">
       <div class="note-icon" tabindex="0"></div>
       <p>Create a new todo...</p>
     </span>
-  </div>
+  </form>
   <div class="entries">
     <ul class="entries__list">
       <?php
-      foreach ($example_items as $item) {
+      foreach ($notes as $note) {
+        $content = $note['Content'];
+
         echo "
           <li class='entries__list__item'>
           <div class='entries__list__item__wrapper'>
             <div class='note-icon' tabindex=0></div>
-            <p>$item</p>
+            <p>$content</p>
           </div>
           <button class='entries__list__item__delete'>
           <img class='entries__list__item__delete__icon'/>
