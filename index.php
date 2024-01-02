@@ -80,20 +80,9 @@ $num_of_incomplete_tasks = $conn->query("SELECT COUNT(*) FROM notes WHERE Comple
     </ul>
     <div class="entries__info">
       <p><?php echo $num_of_incomplete_tasks ?> items left</p>
-      <div class="entries__info__categories">
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
-      </div>
       <form action="services/delete_posts_service.php" method="POST">
         <button type="submit">Clear Completed</button>
       </form>
-    </div>
-
-    <div class="entries__info__categories__mobile">
-      <button>All</button>
-      <button>Active</button>
-      <button>Completed</button>
     </div>
   </div>
 </div>

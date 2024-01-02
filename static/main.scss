@@ -237,41 +237,6 @@
         @include mobile-media-query {
           font-size: 12px;
         }
-
-        &__categories {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-          gap: 10px;
-
-          @include mobile-media-query {
-            display: none;
-          }
-
-          &__mobile {
-            display: none;
-            color: $dark-greyish-blue;
-
-            @include mobile-media-query {
-              display: flex;
-              justify-content: space-evenly;
-              align-items: center;
-              gap: 10px;
-              font-size: 12px;
-
-              background-color: white;
-              margin-top: 10px;
-              padding: 20px;
-              border-radius: $border-radius;
-              box-shadow: $dark-greyish-blue 8px 12px 50px;
-
-              &.dark {
-                background-color: $very-dark-greyish-blue;
-                box-shadow: $very-dark-blue 8px 12px 50px;
-              }
-            }
-          }
-        }
       }
     }
   }
