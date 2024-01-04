@@ -1,0 +1,24 @@
+services:
+  todo-app:
+    build:
+      context: .
+    ports:
+      - "3000:80"
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secret
+      MYSQL_DATABASE: notes_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql-data:

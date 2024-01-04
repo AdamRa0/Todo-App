@@ -1,8 +1,8 @@
 <?php
-    define("DB_HOST", "localhost");
-    define("DB_USER", "adam");
-    define("DB_PASSWORD", "Secret");
-    define("DB_NAME", "Notes_DB");
+    define("DB_HOST", "mysql-db");
+    define("DB_USER", "admin");
+    define("DB_PASSWORD", "secret");
+    define("DB_NAME", "notes_db");
 
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
 
