@@ -1,8 +1,8 @@
 <?php
-    define("DB_HOST", "mysql-db");
-    define("DB_USER", "admin");
-    define("DB_PASSWORD", "secret");
-    define("DB_NAME", "notes_db");
+    define("DB_HOST", $_ENV["MYSQL_DATABASE_SERVICE"]);
+    define("DB_USER", $_ENV["MYSQL_USER"]);
+    define("DB_PASSWORD", $_ENV["MYSQL_PASSWORD"]);
+    define("DB_NAME", $_ENV["MYSQL_DATABASE"]);
 
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD);
 

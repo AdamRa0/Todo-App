@@ -6,14 +6,19 @@ services:
       - "3000:80"
     depends_on:
       - mysql-db
+    environment:
+      MYSQL_DATABASE_SERVICE: <your mysql docker-compose-service>
+      MYSQL_DATABASE: <your mysql database name>
+      MYSQL_USER: <your mysql username>
+      MYSQL_PASSWORD: <your mysql password>
 
   mysql-db:
     image: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root_secret
-      MYSQL_DATABASE: notes_db
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: <your mysql root password>
+      MYSQL_DATABASE: <your mysql database name>
+      MYSQL_USER: <your mysql username>
+      MYSQL_PASSWORD: <your mysql >
     volumes:
       - mysql-data:/var/lib/mysql
       - ./dump/init.sql:/docker-entrypoint-initdb.d/init.sql
