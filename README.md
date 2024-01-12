@@ -2,7 +2,6 @@
 -----------
 A todo app built in php and uses mysql as the database of choice
 
-
 ## Software needed to run project locally
 -----------------------------------------
 - Docker
@@ -13,6 +12,7 @@ A todo app built in php and uses mysql as the database of choice
 - Install docker if docker not installed.
 - Clone project.
 - CD to project folder.
+- Open docker-compose.yaml and key in desired environmental variables
 - Run 
 ```bash 
 docker compose up -d

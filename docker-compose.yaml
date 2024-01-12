@@ -7,7 +7,7 @@ services:
     depends_on:
       - mysql-db
     environment:
-      MYSQL_DATABASE_SERVICE: <your mysql docker-compose-service>
+      MYSQL_DATABASE_SERVICE: mysql-db
       MYSQL_DATABASE: <your mysql database name>
       MYSQL_USER: <your mysql username>
       MYSQL_PASSWORD: <your mysql password>
